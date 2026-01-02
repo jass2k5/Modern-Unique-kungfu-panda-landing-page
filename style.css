@@ -15,6 +15,11 @@ html,body{
     background-repeat: no-repeat
     
 }
+/* optimization */
+html,body,main{
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
 main{
     z-index: 0;
     position: relative;
@@ -65,6 +70,17 @@ main::after{
     border-radius: 20px;
     background-color: transparent;
     backdrop-filter: blur(50px);
+    transform-origin: left;
+    animation: grow 1s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+@keyframes grow{
+    0%{
+        transform: scaleX(0);
+       
+    }
+    100%{
+        transform: scaleX(1);
+    }
 }
 #nav-1 img{
     height: 25px;
@@ -72,7 +88,15 @@ main::after{
     object-fit: cover;
     object-position: center;
     border-radius: 20px;
-
+    animation: rotate 1s ease-in-out 1.3s forwards;
+}
+@keyframes rotate {
+   from{
+    transform: rotate(0deg);
+   }
+   to{
+    transform: rotate(360deg);
+   }
 }
 #nav-1 ul{
     display: flex;
@@ -86,10 +110,20 @@ main::after{
     text-decoration: none;
     color: white;
     transition: all ease 0.3s;
+    letter-spacing: -4px;
+    opacity: 0;
+    animation: spreadout 0.8s cubic-bezier(0.16,1,0.3,1) 1s forwards;
+}
+@keyframes spreadout {
+    to{
+        letter-spacing: 4px;
+        opacity: 1;
+    }
 }
 #nav-1 ul a:hover{
     color: black;
-    border-bottom: 1px solid white;
+    border-bottom:1px solid rgba(225, 225, 225, 0.2) ;
+    
 }
 #header2{
     grid-area: header2;
@@ -110,6 +144,17 @@ main::after{
       align-items: center;
       gap: 25px;
       padding-left: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: searchbarin 0.8s ease-out 1.5s forwards;
+}
+@keyframes searchbarin {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+    
 }
 .search-container input{
     border: none;
@@ -142,4 +187,10 @@ main::after{
 }
 #footer{
     grid-area: footer;
+}
+/* optimixation */
+.search-container,#nav-1 ul a,#nav-1 img,#nav-1{
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
