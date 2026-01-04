@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Cinzel", serif;
 }
 html,body{
     width: 100%;
@@ -33,7 +34,7 @@ main{
     background-color: maroon;
     display: grid;
     grid-template-columns: 130px 1.2fr 1fr;
-    grid-template-rows: 70px 1fr 1fr 50px;
+    grid-template-rows: 70px 1fr 1fr auto;
     grid-template-areas: "header1 header1 header2"
                          "aside section section2"
                          "aside section section2"
@@ -107,7 +108,6 @@ main::after{
     margin-right: 8px;
 }
 #nav-1 ul a{
-    font-family: "Cinzel", serif;
     font-style: normal;
     text-transform: capitalize;
     font-size: 1.1rem;
@@ -134,8 +134,23 @@ main::after{
     grid-area: header2;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content:flex-start ;
+    gap: 90px;
+}
+#img-2{
+    background-color: transparent;
+}
+#img-2 img{
+    height: 35px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin-top: 5px;
+    transition: all ease-in-out 0.5s;
 
+}
+#img-2:hover img{
+    transform: scale(1.1);
 }
 .search-container{
       height: 40px;
@@ -165,11 +180,14 @@ main::after{
     border: none;
     background-color: transparent;
     color: white;
+    width: 150px
 } 
 .search-container input:focus{
     outline: none;
     color: white;
     font-size: 1rem;
+    border: none;
+    box-shadow: none;
 
 }
 .btn-search{
@@ -193,6 +211,7 @@ main::after{
     /* background-color: black; */
 }
 .aside-cylinder{
+    margin-top: 50px;
     width: 50px;
     height: 350px;
     background-color: transparent;
@@ -210,6 +229,7 @@ main::after{
     animation: revealdown 1s cubic-bezier(0.05, 0.7, 0.1, 1.0) 1s forwards;
     will-change: transform,opacity;
 }
+
 @keyframes revealdown {
     to{
         opacity: 1;
@@ -386,7 +406,7 @@ main::after{
     left: 5%;
     top: 8%;
     border: 2px solid rgba(225, 225, 225, 0.7);
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     backdrop-filter: blur(10px);
 }
@@ -406,7 +426,7 @@ main::after{
     color: white;
     backdrop-filter: blur(4px);
     padding: 2px;
-    border: 1px solid rgba(225, 225, 225, 0.7);
+    /* border: 1px solid rgba(225, 225, 225, 0.7); */
     background: transparent;
     border-radius: 50%;
     transition: all ease 0.5s;
@@ -421,7 +441,7 @@ main::after{
     align-items: center;
     justify-content: center;
     right: 9%;
-    top: 11%;
+    top: 8%;
     gap: 25px;
 }
 .upper-right a{
@@ -465,6 +485,48 @@ main::after{
 }
 #footer{
     grid-area: footer;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+#about-experience{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+}
+#three-subs{
+ display: flex;
+ width: 70%;
+ align-items: center;
+ justify-content: space-between;
+ margin: 10px;
+ transform: translateY(80px);
+ animation: fadeup 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
+}
+
+@keyframes fadeup {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#three-subs h3{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: rgba(225, 225, 225, 0.8);
+    backdrop-filter: blur(9px);
+    padding: 7px;
+    border: 2px solid rgba(225, 225, 225, 0.2);
+    border-radius: 20px;
+
 }
 /* optimixation */
 .search-container,#nav-1 ul a,#nav-1 img,#nav-1{
