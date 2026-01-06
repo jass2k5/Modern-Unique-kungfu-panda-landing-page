@@ -561,6 +561,11 @@ main::after{
     align-items: center;
     justify-content: center;
     }
+    .search-container,#nav-1 ul a,#nav-1 img,#nav-1{
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
     main::after{
         /* display: none; */
     }
@@ -720,28 +725,10 @@ main::after{
  margin-bottom: 40px;
 
 }
-
-@keyframes fadeup {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 #three-subs h3{
     font-weight: 500;
     font-size: 1rem;
     color: rgba(225, 225, 225, 0.8);
-    /* background-color: rgba(255, 255, 255, 0.12);  */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 10px;
-    border: 1px solid rgba(225, 225, 225, 0.2);
-    border-radius: 30px;
-    cursor: pointer;
-    transform: translateY(80px);
-    opacity: 0;
-    animation: fadeup 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
 }
 
 }
