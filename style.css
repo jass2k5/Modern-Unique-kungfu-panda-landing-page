@@ -519,6 +519,7 @@ main::after{
     padding: 10px;
     border: 1px solid rgba(225, 225, 225, 0.2);
     border-radius: 30px;
+    cursor: pointer;
     transform: translateY(80px);
     opacity: 0;
     animation: fadeup 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
@@ -546,3 +547,202 @@ main::after{
     backface-visibility: hidden;
     transform: translateZ(0);
 }
+@media (max-width:720px){
+    html,body{
+    background-image: url("download\ \(9\).jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    main::after{
+        /* display: none; */
+    }
+    main{
+    z-index: 0;
+    position: relative;
+    background-image: url("download\ \(9\).jpg");
+    background-position: center;
+    background-size: cover;    
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: maroon;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: 150px 1fr 100px 450px auto;
+    grid-template-areas: "header1 header1 header1"
+                         "section section aside"
+                         "header2 header2 header2"
+                         "section2 section2 section2"
+                         "footer footer footer"
+                         ;
+    row-gap: 40px;
+    }
+    #header1{
+    grid-area: header1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+}
+#nav-1{
+    padding: 10px;
+    gap: 40px;
+}
+
+#nav-1 img{
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    animation: rotate 1s ease-in-out 1.3s forwards;
+}
+
+#nav-1 ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 8px;
+}
+#nav-1 ul a{
+    font-size: 0.8rem;
+}
+#nav-1 ul a:hover{
+    /* color: #B82822; */
+    color: blue;
+    border-bottom:1px solid rgba(225, 225, 225, 0.2);
+    /* background-color: black; */
+    
+}
+#video-box{
+    flex: 1;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 40px;
+    background-color: red;
+    position: relative;
+    overflow: hidden;
+}
+#video-box video{
+    position: absolute;
+    border-radius: 40px;
+    /* top: -2px; */
+    object-fit: cover;
+    object-position: center;
+    height: 120%;
+    margin-top: -4px;
+    width: 100%;
+}
+#header2{
+    margin-top: 10vh;
+    grid-area: header2;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    gap: 60px;
+    /* background-color: black;  */
+}
+.search-container input{
+    border: none;
+    background-color: transparent;
+    color: white;
+    width: 120px
+} 
+.search-container input:focus{
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    box-shadow: none;
+
+}
+.btn-search{
+    height: 25px;
+    width: 20px;
+    border-radius: 40%;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+.search-container input::placeholder{
+    color: white;
+    font-size: 1rem;
+}
+#section2{
+    grid-area: section2;
+    /* background-color:black; */
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-right: 30px;
+    
+}
+.box3{
+    margin-top: -90px;
+    position: relative;
+    object-fit: cover;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#footer{
+    grid-area: footer;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+#three-subs{
+ display: flex;
+ width: 80%;
+ align-items: center;
+ justify-content: space-between;
+ margin-bottom: 40px;
+
+}
+
+@keyframes fadeup {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#three-subs h3{
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(225, 225, 225, 0.8);
+    /* background-color: rgba(255, 255, 255, 0.12);  */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px;
+    border: 1px solid rgba(225, 225, 225, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    transform: translateY(80px);
+    opacity: 0;
+    animation: fadeup 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2.5s forwards;
+}
+
+}
+
